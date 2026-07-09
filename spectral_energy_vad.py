@@ -1,14 +1,15 @@
 """
 Spectral-energy-based Voice Activity Detection (VAD)
-Starter scaffold for the transit-announcement DSP project.
 
 Pipeline for each frame:
     frame -> Hamming window -> FFT -> band-limited energy -> threshold -> decision
 
-Author notes:
-- Keep the frame_len / hop_len IDENTICAL to whatever the segmentation/FFT
+Notes:
+- Keep the frame_len / hop_len identical to whatever the segmentation/FFT
   teammates use, so your speech/no-speech mask lines up with their frames.
 - Work in dB (log energy): thresholds behave more consistently across SNRs.
+
+-for now frame length is 25ms, hop is 10ms, threshold is fixed at 6dB (later should probably make it adaptive)
 """
 
 import numpy as np
